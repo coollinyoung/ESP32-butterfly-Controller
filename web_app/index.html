@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 蝴蝶控制器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 蝴蝶控制器</h1>
+        
+        <!-- 連線狀態顯示區域 -->
+        <div id="status-display" class="status-disconnected">
+            連線狀態: <span id="connection-status-text">斷線</span>
+        </div>
+
+        <!-- 虛擬搖桿區域 -->
+        <div class="joystick-area">
+            <h2>遙控搖桿</h2>
+            <div id="joystick-base">
+                <div id="joystick-handle"></div>
+            </div>
+            <div class="joystick-coords">
+                X: <span id="joystick-x">0</span>, Y: <span id="joystick-y">0</span>
+            </div>
+        </div>
+
+        <!-- 舵機角度幅度設定區域 -->
+        <div class="angle-setting-area">
+            <h2>舵機最大角度設定</h2>
+            <input type="number" id="servo-max-angle-input" value="180" min="0" max="180">
+            <button id="set-angle-button">設定角度</button>
+            <p>當前最大角度: <span id="current-max-angle">180</span>°</p>
+        </div>
+
+        <!-- 錯誤訊息顯示區域 -->
+        <div id="error-message" class="error-hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
